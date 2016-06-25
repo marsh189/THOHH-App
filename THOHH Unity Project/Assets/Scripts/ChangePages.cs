@@ -9,13 +9,24 @@ public class ChangePages : MonoBehaviour {
 	private Vector3 endClick;
 	private float distance = 0f;
 	private bool swiped = false;
+	int indexNext;
+
 	public RawImage pageIMG;
 	public List<Texture> images;
-
+	public Canvas endBook;
+	public GameObject popUp;
 
 	void Start()
 	{
-		pageIMG.GetComponent<RawImage> ().texture = images [0];
+		if (PlayerPrefs.GetInt("Page Number") > 2) 
+		{
+			popUp.SetActive (true);
+			pageIMG.GetComponent<RawImage> ().texture = images [PlayerPrefs.GetInt("Page Number")];
+		} 
+		else 
+		{
+			pageIMG.GetComponent<RawImage> ().texture = images [0];
+		}
 	}
 	void FixedUpdate () 
 	{
@@ -44,18 +55,35 @@ public class ChangePages : MonoBehaviour {
 			//direction
 			if (distance > 10f) 
 			{
-				if (deltaX > 0) 
-				{ //swiped left
-					int indexNext = images.IndexOf (pageIMG.GetComponent<RawImage> ().texture) + 1;
-					pageIMG.GetComponent<RawImage> ().texture = (Texture)images [indexNext];
+				if (deltaX > 0) //next page
+				{ 
+					indexNext = images.IndexOf (pageIMG.GetComponent<RawImage> ().texture) + 1;
+					if (indexNext < images.Count) 
+					{
+						pageIMG.GetComponent<RawImage> ().texture = (Texture)images [indexNext];
+					} 
+					else 
+					{
+						pageIMG.gameObject.SetActive (false);
+						endBook.gameObject.SetActive (true);
+					}
 				} 
-				else if (deltaX <= 0) 
+				else if (deltaX <= 0) //prev page
 				{ //swiped right
 					int indexNext = images.IndexOf (pageIMG.GetComponent<RawImage> ().texture) - 1;
 					pageIMG.GetComponent<RawImage> ().texture = (Texture)images [indexNext];
 				}
 			}
 			swiped = true;
+			PlayerPrefs.SetInt ("Page Number", images.IndexOf (pageIMG.GetComponent<RawImage> ().texture)); //Saves index of list item currently on.
+			PlayerPrefs.Save();
 		}
+	}
+
+	public void StartOver()
+	{
+		PlayerPrefs.SetInt ("Page Number", 0);
+		pageIMG.GetComponent<RawImage> ().texture = (Texture)images [0];
+		popUp.SetActive (false);
 	}
 }
