@@ -19,6 +19,10 @@ public class FadeInScenes : MonoBehaviour {
 		{
 			tempColor.a -= Time.deltaTime;
 			fadeIMG.GetComponent<Image> ().color = tempColor;
+		} 
+		else 
+		{
+			fadeIMG.gameObject.SetActive (false);
 		}
 	}
 }
