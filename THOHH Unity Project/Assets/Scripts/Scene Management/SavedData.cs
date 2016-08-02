@@ -6,8 +6,10 @@ public class SavedData : MonoBehaviour 	//not sure if needed, update this script
 
 	public int closedDisclaimer;	//if 1, disclaimer was closed and should not come up again
 	public int pageNumber; //Page index currently on (must subtract 2 to get actual page number)
-	public int awesomeBought;//true if Awesome version was bought;
-	public int pageAnimations; //true if page animation toggle is on
+	public int awesomeBought;//if 1, Awesome version was bought;
+	public int pageAnimations; //if 1, page animation toggle is on
+	public int musicOn;			//if 1, music is on
+	public string narration;	//name of narrator turned on; if off, no narrations
 
 	void Update()
 	{
@@ -15,5 +17,7 @@ public class SavedData : MonoBehaviour 	//not sure if needed, update this script
 		closedDisclaimer = PlayerPrefs.GetInt ("Closed Disclaimer");
 		awesomeBought = PlayerPrefs.GetInt ("Awesome Bought");
 		pageAnimations = PlayerPrefs.GetInt ("Page Animations");
+		musicOn = PlayerPrefs.GetInt ("Music");
+		narration = PlayerPrefs.GetString ("Narrator");
 	}
 }

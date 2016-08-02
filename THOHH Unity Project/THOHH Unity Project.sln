@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THOHH Unity Project.CSharp", "THOHH Unity Project.CSharp.csproj", "{E5CC90B1-E900-0563-32CC-037BE65EF8E3}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{9CC94337-FE5D-EE76-C5A3-2059F36AA250}") = "THOHH Unity Project", "Assembly-CSharp.csproj", "{75BD34D1-9337-DA75-3E3A-1C657F99B69E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E5CC90B1-E900-0563-32CC-037BE65EF8E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5CC90B1-E900-0563-32CC-037BE65EF8E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5CC90B1-E900-0563-32CC-037BE65EF8E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5CC90B1-E900-0563-32CC-037BE65EF8E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75BD34D1-9337-DA75-3E3A-1C657F99B69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75BD34D1-9337-DA75-3E3A-1C657F99B69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75BD34D1-9337-DA75-3E3A-1C657F99B69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75BD34D1-9337-DA75-3E3A-1C657F99B69E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.StatementBraceStyle = NextLine
+		$2.ElseNewLinePlacement = NewLine
+		$2.ElseIfNewLinePlacement = NewLine
+		$2.CatchNewLinePlacement = NewLine
+		$2.FinallyNewLinePlacement = NewLine
+		$2.WhileNewLinePlacement = NewLine
+		$2.AfterDelegateDeclarationParameterComma = True
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.VersionControlPolicy = $3
+		$3.inheritsSet = Mono
 	EndGlobalSection
 EndGlobal
