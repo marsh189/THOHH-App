@@ -51,11 +51,13 @@ public class ChangePages : MonoBehaviour
 				videoCtrl.Load("page" + animIndex + "animation.mp4");
 				videoCtrl.m_bAutoPlay = true;
 				videoCtrl.m_bLoop = true;
+				GetComponent<BookSounds> ().PlayAudio (0);
 			} 
 			else 
 			{
 				videoCtrl.gameObject.SetActive (false);
 				pageIMG.GetComponent<RawImage> ().texture = images [0];
+				GetComponent<BookSounds> ().PlayAudio (0);
 			}
 		}
 
@@ -87,6 +89,7 @@ public class ChangePages : MonoBehaviour
 							videoCtrl.Load("page" + animIndex + "animation.mp4");
 							videoCtrl.m_bAutoPlay = true;
 							videoCtrl.m_bLoop = true;
+							GetComponent<BookSounds> ().PlayAudio (animIndex);
 						}
 						else
 						{
@@ -99,6 +102,7 @@ public class ChangePages : MonoBehaviour
 						if(indexNext < images.Count)
 						{
 							pageIMG.GetComponent<RawImage>().texture = (Texture)images[indexNext];
+							GetComponent<BookSounds> ().PlayAudio (indexNext);
 						}
 						else
 						{
@@ -126,11 +130,22 @@ public class ChangePages : MonoBehaviour
 							videoCtrl.m_bLoop = true;
 						}
 						pageIMG.GetComponent<RawImage>().texture = (Texture)blankImages[indexNext];
+						GetComponent<BookSounds> ().PlayAudio (animIndex);
 					}
 					else
 					{
-						int indexNext = images.IndexOf(pageIMG.GetComponent<RawImage>().texture) - 1;
-						pageIMG.GetComponent<RawImage>().texture = (Texture)images[indexNext];
+						int indexNext = images.IndexOf (pageIMG.GetComponent<RawImage> ().texture) - 1;
+						if (indexNext >= 0) //checks if already on first page
+						{
+							pageIMG.GetComponent<RawImage> ().texture = (Texture)images [indexNext];
+							GetComponent<BookSounds> ().PlayAudio (indexNext);
+						}
+						else
+						{
+							indexNext = 0;
+							pageIMG.GetComponent<RawImage> ().texture = (Texture)images [indexNext];
+							GetComponent<BookSounds> ().PlayAudio (indexNext);
+						}
 					}
 				}
 				if(PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
@@ -158,12 +173,20 @@ public class ChangePages : MonoBehaviour
 			videoCtrl.m_bAutoPlay = true;
 			videoCtrl.m_bLoop = true;
 			animIndex = 1;
+			GetComponent<BookSounds> ().PlayAudio (0);
 		}
 		else 
 		{
 			pageIMG.GetComponent<RawImage> ().texture = (Texture)images [0];
 			videoCtrl.gameObject.SetActive (true);
+			GetComponent<BookSounds> ().PlayAudio (0);
 		}
 		popUp.SetActive (false); //close pop-up
+	}
+
+	public void Continue()
+	{
+		GameObject.Find ("Pop-Up").SetActive (false);
+		GetComponent<BookSounds> ().PlayAudio (PlayerPrefs.GetInt ("PageNumber") + 1);
 	}
 }
