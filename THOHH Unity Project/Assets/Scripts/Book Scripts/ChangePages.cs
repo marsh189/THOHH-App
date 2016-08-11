@@ -89,7 +89,7 @@ public class ChangePages : MonoBehaviour
 							videoCtrl.Load("page" + animIndex + "animation.mp4");
 							videoCtrl.m_bAutoPlay = true;
 							videoCtrl.m_bLoop = true;
-							GetComponent<BookSounds> ().PlayAudio (animIndex);
+							GetComponent<BookSounds> ().PlayAudio (indexNext);
 						}
 						else
 						{
@@ -130,7 +130,7 @@ public class ChangePages : MonoBehaviour
 							videoCtrl.m_bLoop = true;
 						}
 						pageIMG.GetComponent<RawImage>().texture = (Texture)blankImages[indexNext];
-						GetComponent<BookSounds> ().PlayAudio (animIndex);
+						GetComponent<BookSounds> ().PlayAudio (indexNext);
 					}
 					else
 					{

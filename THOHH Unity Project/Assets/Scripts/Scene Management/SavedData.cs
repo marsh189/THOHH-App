@@ -10,6 +10,10 @@ public class SavedData : MonoBehaviour 	//not sure if needed, update this script
 	public int pageAnimations; //if 1, page animation toggle is on
 	public int musicOn;			//if 1, music is on
 	public string narration;	//name of narrator turned on; if off, no narrations
+	public int numOn;
+	public int charOn;
+	public int alphaOn;
+	public int timedOn;
 
 	void Update()
 	{
@@ -19,5 +23,9 @@ public class SavedData : MonoBehaviour 	//not sure if needed, update this script
 		pageAnimations = PlayerPrefs.GetInt ("Page Animations");
 		musicOn = PlayerPrefs.GetInt ("Music");
 		narration = PlayerPrefs.GetString ("Narrator");
+		numOn = PlayerPrefs.GetInt ("123s");
+		charOn = PlayerPrefs.GetInt ("Characters");
+		alphaOn = PlayerPrefs.GetInt ("ABCs");
+		timedOn = PlayerPrefs.GetInt ("Timed");
 	}
 }

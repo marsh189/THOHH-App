@@ -18,11 +18,6 @@ public class LoadingScreen : MonoBehaviour {
 		text.SetActive (false);
 		progressBar.SetActive (false);
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	}
 
 	public void SceneChange(string levelToLoad)
 	{
@@ -31,6 +26,7 @@ public class LoadingScreen : MonoBehaviour {
 
 	IEnumerator DisplayLoadingScreen(string level)
 	{
+		Canvas.SetActive (false);
 		background.SetActive (true);
 		text.SetActive (true);
 		progressBar.SetActive (true);
