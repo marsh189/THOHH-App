@@ -5,34 +5,42 @@ using UnityEngine.UI;
 
 public class PlaySplashScreen : MonoBehaviour {
 
-	public float wait = 6f;
+	public float wait = 15f;
 	public Image fadeIMG;
+	public string nextScene;
+	public Color tempColor;
+
 	float time;
-	Color tempColor;
+	bool startFadeIn;
 
 	// Use this for initialization
 	void Start () 
 	{
-		tempColor = fadeIMG.GetComponent<Image> ().color;
+		startFadeIn = true;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-		fadeIMG.GetComponent<Image> ().color = Color.clear;
-
-		if (time >= wait) 
+	void Update () 
+	{
+		if (startFadeIn)
 		{
-			tempColor.a += Time.deltaTime;
-			fadeIMG.GetComponent<Image> ().color = tempColor;
-			if (fadeIMG.GetComponent<Image>().color.a >= 1f) 
+			if (tempColor.a <= 0f)
 			{
-				SceneManager.LoadScene ("Main Menu");
+				time += Time.deltaTime;
+				if (time >= wait)
+				{
+					startFadeIn = false;
+				}
 			}
-		} 
-		else 
+			else
+			{
+				tempColor.a -= 0.1f;
+				fadeIMG.GetComponent<Image> ().color = tempColor;
+			}
+		}
+		else
 		{
-			time += Time.deltaTime;
+			SceneManager.LoadScene (nextScene);
 		}
 	}
 }

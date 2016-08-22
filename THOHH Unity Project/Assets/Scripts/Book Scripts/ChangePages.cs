@@ -89,7 +89,7 @@ public class ChangePages : MonoBehaviour
 							videoCtrl.Load("page" + animIndex + "animation.mp4");
 							videoCtrl.m_bAutoPlay = true;
 							videoCtrl.m_bLoop = true;
-							GetComponent<BookSounds> ().PlayAudio (indexNext);
+							
 						}
 						else
 						{
@@ -102,7 +102,7 @@ public class ChangePages : MonoBehaviour
 						if(indexNext < images.Count)
 						{
 							pageIMG.GetComponent<RawImage>().texture = (Texture)images[indexNext];
-							GetComponent<BookSounds> ().PlayAudio (indexNext);
+							
 						}
 						else
 						{
@@ -130,7 +130,7 @@ public class ChangePages : MonoBehaviour
 							videoCtrl.m_bLoop = true;
 						}
 						pageIMG.GetComponent<RawImage>().texture = (Texture)blankImages[indexNext];
-						GetComponent<BookSounds> ().PlayAudio (indexNext);
+						
 					}
 					else
 					{
@@ -138,13 +138,13 @@ public class ChangePages : MonoBehaviour
 						if (indexNext >= 0) //checks if already on first page
 						{
 							pageIMG.GetComponent<RawImage> ().texture = (Texture)images [indexNext];
-							GetComponent<BookSounds> ().PlayAudio (indexNext);
+							
 						}
 						else
 						{
 							indexNext = 0;
 							pageIMG.GetComponent<RawImage> ().texture = (Texture)images [indexNext];
-							GetComponent<BookSounds> ().PlayAudio (indexNext);
+							
 						}
 					}
 				}

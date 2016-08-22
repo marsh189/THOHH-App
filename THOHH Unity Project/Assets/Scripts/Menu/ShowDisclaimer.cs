@@ -5,16 +5,28 @@ public class ShowDisclaimer : MonoBehaviour
 {
 	public GameObject dis;
 
-	// Update is called once per frame
-	void Update () 
+	void Start () 
 	{
-		if (GetComponent<SavedData>().closedDisclaimer == 0) 
-		{
-			dis.SetActive (true);
-		} 
-		else if(GetComponent<SavedData>().closedDisclaimer == 1)
+		if(PlayerPrefs.GetInt ("Closed Disclaimer") == 1)
 		{
 			dis.SetActive (false);
 		}
+		else if (PlayerPrefs.GetInt ("Closed Disclaimer") == 0) 
+		{
+			dis.SetActive (true);
+		} 
+	}
+
+	// Update is called once per frame
+	void Update () 
+	{
+		if(PlayerPrefs.GetInt ("Closed Disclaimer") == 1)
+		{
+			dis.SetActive (false);
+		}
+		else if (PlayerPrefs.GetInt ("Closed Disclaimer") == 0) 
+		{
+			dis.SetActive (true);
+		} 
 	}
 }

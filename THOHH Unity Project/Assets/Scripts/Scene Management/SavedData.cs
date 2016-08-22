@@ -14,6 +14,7 @@ public class SavedData : MonoBehaviour 	//not sure if needed, update this script
 	public int charOn;
 	public int alphaOn;
 	public int timedOn;
+	public string lastScene;
 
 	void Update()
 	{
@@ -27,5 +28,6 @@ public class SavedData : MonoBehaviour 	//not sure if needed, update this script
 		charOn = PlayerPrefs.GetInt ("Characters");
 		alphaOn = PlayerPrefs.GetInt ("ABCs");
 		timedOn = PlayerPrefs.GetInt ("Timed");
+		lastScene = PlayerPrefs.GetString ("Last Scene");
 	}
 }

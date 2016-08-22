@@ -26,6 +26,26 @@ public class ButtonScript : MonoBehaviour		//All code to navigate through game a
 	{
 		GameObject.Find ("Pop-Up").SetActive (false);
 	}
+
+	public void SaveLastScene(string name) //saves the scene you left to go back to later
+	{
+		Scene last = SceneManager.GetActiveScene();
+		string lastSceneName = last.name;
+		PlayerPrefs.SetString ("Last Scene", lastSceneName);
+		SceneManager.LoadScene (name);
+	}
+
+	public void Back() //Back to the last scene
+	{
+		if (PlayerPrefs.GetString ("Last Scene") == "Main Menu")
+		{
+			SceneManager.LoadScene (PlayerPrefs.GetString ("Last Scene"));
+		}
+		else
+		{
+			GetComponent<LoadingScreen> ().SceneChange (PlayerPrefs.GetString ("Last Scene"));
+		}
+	}
 		
 	public void Reset()	//Resets all data (may not need this in game, may help for testing purposes)
 	{
