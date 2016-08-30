@@ -8,6 +8,7 @@ public class LoadingScreen : MonoBehaviour {
 	public GameObject text;
 	public GameObject progressBar;
 	public GameObject Canvas;
+	//public GameObject errorText;
 
 	int loadProgress = 0;
 
@@ -17,11 +18,19 @@ public class LoadingScreen : MonoBehaviour {
 		background.SetActive (false);
 		text.SetActive (false);
 		progressBar.SetActive (false);
+		//errorText.SetActive (false);
 	}
 
 	public void SceneChange(string levelToLoad)
 	{
-		StartCoroutine(DisplayLoadingScreen(levelToLoad));
+		//if (PlayerPrefs.GetInt ("123s") == 0 && PlayerPrefs.GetInt ("ABCs") == 0 && PlayerPrefs.GetInt ("Characters") == 0)
+		//{
+		//	errorText.SetActive (true);
+		//}
+		//else
+		//{
+			StartCoroutine (DisplayLoadingScreen (levelToLoad));
+		//}
 	}
 
 	IEnumerator DisplayLoadingScreen(string level)

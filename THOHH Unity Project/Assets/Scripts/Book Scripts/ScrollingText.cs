@@ -7,12 +7,11 @@ public class ScrollingText : MonoBehaviour
 {
 
 	public bool startScroll = false;
-	public bool urlWait = false;
 	public Canvas creditCanvas;
 	public GameObject text;
 	public Text url;
 	public float speed = 0.2f;
-	public float wait = 5f;
+	public float wait = 3f;
 	public Transform endPos;
 
 	float time;
@@ -39,31 +38,34 @@ public class ScrollingText : MonoBehaviour
 
 				if (text.transform.position.y >= endPos.position.y) 
 				{
-					urlWait = true; 
-					startScroll = false;
+					if (speed > 0)
+					{
+						speed--;
+						text.transform.Translate (Vector3.up * Time.deltaTime * speed);
+					}
+					else
+					{
+						if (time < wait)
+						{
+							time += Time.deltaTime;
+						}
+						else
+						{
+							if (url.GetComponent<Text> ().color.a > 0f)
+							{
+								tempColor.a -= Time.deltaTime;
+								url.GetComponent<Text> ().color = tempColor;
+							}
+							else
+							{
+								SceneManager.LoadScene ("Main Menu");
+							}
+						}
+					}
 				}
 				else
 				{
 					text.transform.Translate (Vector3.up * Time.deltaTime * speed);
-				}
-			}
-		}
-		else if(urlWait)
-		{
-			if(time < wait)
-			{
-				time += Time.deltaTime;
-			}
-			else
-			{
-				if (url.GetComponent<Text> ().color.a < 1f) 
-				{
-					tempColor.a += Time.deltaTime;
-					url.GetComponent<Text> ().color = tempColor;
-				} 
-				else 
-				{
-					SceneManager.LoadScene("Main Menu");
 				}
 			}
 		}

@@ -20,6 +20,8 @@ public class ChangePages : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		sText = gameObject.GetComponent<ScrollingText> ();
+
 		if (PlayerPrefs.GetInt ("Page Number") > 0) //book has been started
 		{
 			popUp.SetActive (true);	//show pop-up
@@ -51,17 +53,13 @@ public class ChangePages : MonoBehaviour
 				videoCtrl.Load("page" + animIndex + "animation.mp4");
 				videoCtrl.m_bAutoPlay = true;
 				videoCtrl.m_bLoop = true;
-				GetComponent<BookSounds> ().PlayAudio (0);
 			} 
 			else 
 			{
 				videoCtrl.gameObject.SetActive (false);
 				pageIMG.GetComponent<RawImage> ().texture = images [0];
-				GetComponent<BookSounds> ().PlayAudio (0);
 			}
 		}
-
-		sText = GetComponent<ScrollingText> ();
 	}
 
 	void Update () 
@@ -173,13 +171,11 @@ public class ChangePages : MonoBehaviour
 			videoCtrl.m_bAutoPlay = true;
 			videoCtrl.m_bLoop = true;
 			animIndex = 1;
-			GetComponent<BookSounds> ().PlayAudio (0);
 		}
 		else 
 		{
 			pageIMG.GetComponent<RawImage> ().texture = (Texture)images [0];
 			videoCtrl.gameObject.SetActive (true);
-			GetComponent<BookSounds> ().PlayAudio (0);
 		}
 		popUp.SetActive (false); //close pop-up
 	}
@@ -187,6 +183,5 @@ public class ChangePages : MonoBehaviour
 	public void Continue()
 	{
 		GameObject.Find ("Pop-Up").SetActive (false);
-		GetComponent<BookSounds> ().PlayAudio (PlayerPrefs.GetInt ("PageNumber") + 1);
 	}
 }

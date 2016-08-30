@@ -71,6 +71,8 @@
      <Compile Include="Assets\Scripts\Fading Scripts\FadeToScene.cs" />
      <Compile Include="Assets\Scripts\Memory Game\CardOrganizer.cs" />
      <Compile Include="Assets\Scripts\Memory Game\FlipCards.cs" />
+     <Compile Include="Assets\Scripts\Memory Game\MemoryLoad.cs" />
+     <Compile Include="Assets\Scripts\Memory Game\ScoreKeeper.cs" />
      <Compile Include="Assets\Scripts\Memory Game\SetUpButtons.cs" />
      <Compile Include="Assets\Scripts\Menu\PlaySplashScreen.cs" />
      <Compile Include="Assets\Scripts\Menu\ShowDisclaimer.cs" />
