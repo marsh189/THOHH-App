@@ -1,14 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scene Management/LoadingScreen.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fading Scripts\FadeOutScenes.cs">
     <Files>
-      <File FileName="Assets/Scripts/Scene Management/LoadingScreen.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Book Scripts/ScrollingText.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Book Scripts/ChangePages.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Book Scripts/ChangePagesWithSound.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Book Scripts/MusicPlay.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Fading Scripts/FadeInScenes.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Fading Scripts/FadeOutScenes.cs" Line="27" Column="16" />
+      <File FileName="Assets\Scripts\Memory Game\ScoreKeeper.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Scene Management\LoadingScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Book Scripts\ScrollingText.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fading Scripts\FadeInScenes.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fading Scripts\FadeOutScenes.cs" Line="20" Column="3" />
+      <File FileName="Assets\Scripts\Scene Management\ButtonScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Memory Game\FlipCards.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Book Scripts\ChangePagesWithSound.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

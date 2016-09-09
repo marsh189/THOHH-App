@@ -14,11 +14,13 @@ public class FlipCards : MonoBehaviour {
 		{
 			score.firstTurned = this.gameObject;
 			gameObject.GetComponent<Image> ().sprite = tileFront;
+			this.GetComponent<Button> ().interactable = false;
 		}
-		else if (score.secondTurned == null)
+		else if (score.firstTurned.name != this.name && score.secondTurned == null)
 		{
 			score.secondTurned = this.gameObject;
 			gameObject.GetComponent<Image> ().sprite = tileFront;
+			this.GetComponent<Button> ().interactable = false;
 		}
 	}
 }
