@@ -27,7 +27,7 @@ public class ChangePages : MonoBehaviour
 			popUp.SetActive (true);	//show pop-up
 
 			//check if awesome version is bought and page animations is on
-			if (PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
+			if (PlayerPrefs.GetInt("Awesome Bought") == 1)
 			{
 				videoCtrl.gameObject.SetActive (true);
 				pageIMG.GetComponent<RawImage> ().texture = blankImages [PlayerPrefs.GetInt ("Page Number")];
@@ -45,7 +45,7 @@ public class ChangePages : MonoBehaviour
 		}
 		else //book is at the beginning
 		{
-			if (PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
+			if (PlayerPrefs.GetInt("Awesome Bought") == 1)
 			{
 				pageIMG.GetComponent<RawImage> ().texture = blankImages [0];
 				videoCtrl.gameObject.SetActive(true);
@@ -77,7 +77,7 @@ public class ChangePages : MonoBehaviour
 
 				if(deltaX > 5f) //next page
 				{ 
-					if(PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
+					if(PlayerPrefs.GetInt("Awesome Bought") == 1)
 					{
 						indexNext = blankImages.IndexOf(pageIMG.GetComponent<RawImage>().texture) + 1;
 						if(indexNext < images.Count)
@@ -110,7 +110,7 @@ public class ChangePages : MonoBehaviour
 				}
 				else if(deltaX <= -5f) //prev page
 				{
-					if(PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
+					if(PlayerPrefs.GetInt("Awesome Bought") == 1)
 					{
 						int indexNext = blankImages.IndexOf(pageIMG.GetComponent<RawImage>().texture) - 1;
 						if(indexNext >= 0) //checks if already on first page
@@ -146,7 +146,7 @@ public class ChangePages : MonoBehaviour
 						}
 					}
 				}
-				if(PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
+				if(PlayerPrefs.GetInt("Awesome Bought") == 1)
 				{
 					PlayerPrefs.SetInt("Page Number", blankImages.IndexOf(pageIMG.GetComponent<RawImage>().texture)); //Saves index of list item currently on.
 					PlayerPrefs.Save();
@@ -163,7 +163,7 @@ public class ChangePages : MonoBehaviour
 	public void StartOver() //if start over button is clicked, go back to page 1
 	{
 		PlayerPrefs.SetInt ("Page Number", 0);
-		if (PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
+		if (PlayerPrefs.GetInt("Awesome Bought") == 1)
 		{
 			pageIMG.GetComponent<RawImage> ().texture = (Texture)blankImages [0];
 			videoCtrl.gameObject.SetActive (true);

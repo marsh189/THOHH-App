@@ -97,6 +97,7 @@ public class ScoreKeeper : MonoBehaviour {
 				if (t < highScore || highScore == 0f)
 				{
 					highScore = t;
+					PlayerPrefs.SetFloat ("High Score", highScore);
 					hNotice.SetActive (true);
 				}
 

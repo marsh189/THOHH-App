@@ -1,7 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Narrated Book.unity
+- path: Assets/Scenes/Setting Screen.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/Scenes/Book.unity
-  isLoaded: 1
-  isActive: 0

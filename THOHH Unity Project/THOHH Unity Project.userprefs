@@ -1,15 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fading Scripts\FadeOutScenes.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EasyMovieTexture\Scripts\MediaPlayerCtrl.cs">
     <Files>
-      <File FileName="Assets\Scripts\Memory Game\ScoreKeeper.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Scene Management\LoadingScreen.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Book Scripts\ScrollingText.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Fading Scripts\FadeInScenes.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Fading Scripts\FadeOutScenes.cs" Line="20" Column="3" />
-      <File FileName="Assets\Scripts\Scene Management\ButtonScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Memory Game\FlipCards.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Book Scripts\BookSounds.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Book Scripts\ChangePagesWithSound.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Scene Management\SliderManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\EasyMovieTexture\Scripts\MediaPlayerCtrl.cs" Line="28" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -25,7 +25,7 @@ public class ChangePagesWithSound : MonoBehaviour
 			popUp.SetActive (true);	//show pop-up
 
 			//check if awesome version is bought and page animations is on
-			if (PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
+			if (PlayerPrefs.GetInt("Awesome Bought") == 1)
 			{
 				videoCtrl.gameObject.SetActive (true);
 				pageIMG.GetComponent<RawImage> ().texture = blankImages [PlayerPrefs.GetInt ("Page Number")];
@@ -43,7 +43,7 @@ public class ChangePagesWithSound : MonoBehaviour
 		}
 		else //book is at the beginning
 		{
-			if (PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
+			if (PlayerPrefs.GetInt("Awesome Bought") == 1)
 			{
 				pageIMG.GetComponent<RawImage> ().texture = blankImages [0];
 				videoCtrl.gameObject.SetActive(true);
@@ -79,76 +79,13 @@ public class ChangePagesWithSound : MonoBehaviour
 
 				if(deltaX > 5f) //next page
 				{ 
-					if(PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
-					{
-						indexNext = blankImages.IndexOf(pageIMG.GetComponent<RawImage>().texture) + 1;
-						if(indexNext < images.Count)
-						{
-							animIndex++;
-							pageIMG.GetComponent<RawImage>().texture = (Texture)blankImages[indexNext];
-							videoCtrl.Load("page" + animIndex + "animation.mp4");
-							videoCtrl.m_bAutoPlay = true;
-							videoCtrl.m_bLoop = true;
-							GetComponent<BookSounds> ().PlayAudio (indexNext);
-						}
-						else
-						{
-							sText.startScroll = true;
-						}
-					}
-					else
-					{
-						indexNext = images.IndexOf(pageIMG.GetComponent<RawImage>().texture) + 1;
-						if(indexNext < images.Count)
-						{
-							pageIMG.GetComponent<RawImage>().texture = (Texture)images[indexNext];
-							GetComponent<BookSounds> ().PlayAudio (indexNext);
-						}
-						else
-						{
-							sText.startScroll = true;
-						}
-					}
+					NextPage ();
 				}
 				else if(deltaX <= -5f) //prev page
 				{
-					if(PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
-					{
-						int indexNext = blankImages.IndexOf(pageIMG.GetComponent<RawImage>().texture) - 1;
-						if(indexNext >= 0) //checks if already on first page
-						{
-							animIndex--;
-							videoCtrl.Load("page" + animIndex + "animation.mp4");
-							videoCtrl.m_bAutoPlay = true;
-							videoCtrl.m_bLoop = true;
-						}
-						else //keeps animation on first page
-						{
-							animIndex = 1;
-							videoCtrl.Load("page1animation.mp4");
-							videoCtrl.m_bAutoPlay = true;
-							videoCtrl.m_bLoop = true;
-						}
-						pageIMG.GetComponent<RawImage>().texture = (Texture)blankImages[indexNext];
-						GetComponent<BookSounds> ().PlayAudio (indexNext);
-					}
-					else
-					{
-						int indexNext = images.IndexOf (pageIMG.GetComponent<RawImage> ().texture) - 1;
-						if (indexNext >= 0) //checks if already on first page
-						{
-							pageIMG.GetComponent<RawImage> ().texture = (Texture)images [indexNext];
-							GetComponent<BookSounds> ().PlayAudio (indexNext);
-						}
-						else
-						{
-							indexNext = 0;
-							pageIMG.GetComponent<RawImage> ().texture = (Texture)images [indexNext];
-							GetComponent<BookSounds> ().PlayAudio (indexNext);
-						}
-					}
+					LastPage ();
 				}
-				if(PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
+				if(PlayerPrefs.GetInt("Awesome Bought") == 1)
 				{
 					PlayerPrefs.SetInt("Page Number", blankImages.IndexOf(pageIMG.GetComponent<RawImage>().texture)); //Saves index of list item currently on.
 					PlayerPrefs.Save();
@@ -162,10 +99,83 @@ public class ChangePagesWithSound : MonoBehaviour
 		}
 	}
 
+	public void NextPage()
+	{
+		if(PlayerPrefs.GetInt("Awesome Bought") == 1)
+		{
+			indexNext = blankImages.IndexOf(pageIMG.GetComponent<RawImage>().texture) + 1;
+			if(indexNext < images.Count)
+			{
+				animIndex++;
+				pageIMG.GetComponent<RawImage>().texture = (Texture)blankImages[indexNext];
+				videoCtrl.Load("page" + animIndex + "animation.mp4");
+				videoCtrl.m_bAutoPlay = true;
+				videoCtrl.m_bLoop = true;
+				GetComponent<BookSounds> ().PlayAudio (indexNext);
+			}
+			else
+			{
+				sText.startScroll = true;
+			}
+		}
+		else
+		{
+			indexNext = images.IndexOf(pageIMG.GetComponent<RawImage>().texture) + 1;
+			if(indexNext < images.Count)
+			{
+				pageIMG.GetComponent<RawImage>().texture = (Texture)images[indexNext];
+				GetComponent<BookSounds> ().PlayAudio (indexNext);
+			}
+			else
+			{
+				sText.startScroll = true;
+			}
+		}
+	}
+
+	public void LastPage()
+	{
+		if(PlayerPrefs.GetInt("Awesome Bought") == 1)
+		{
+			int indexNext = blankImages.IndexOf(pageIMG.GetComponent<RawImage>().texture) - 1;
+			if(indexNext >= 0) //checks if already on first page
+			{
+				animIndex--;
+				videoCtrl.Load("page" + animIndex + "animation.mp4");
+				videoCtrl.m_bAutoPlay = true;
+				videoCtrl.m_bLoop = true;
+			}
+			else //keeps animation on first page
+			{
+				animIndex = 1;
+				videoCtrl.Load("page1animation.mp4");
+				videoCtrl.m_bAutoPlay = true;
+				videoCtrl.m_bLoop = true;
+			}
+			pageIMG.GetComponent<RawImage>().texture = (Texture)blankImages[indexNext];
+			GetComponent<BookSounds> ().PlayAudio (indexNext);
+		}
+		else
+		{
+			int indexNext = images.IndexOf (pageIMG.GetComponent<RawImage> ().texture) - 1;
+			if (indexNext >= 0) //checks if already on first page
+			{
+				pageIMG.GetComponent<RawImage> ().texture = (Texture)images [indexNext];
+				GetComponent<BookSounds> ().PlayAudio (indexNext);
+			}
+			else
+			{
+				indexNext = 0;
+				pageIMG.GetComponent<RawImage> ().texture = (Texture)images [indexNext];
+				GetComponent<BookSounds> ().PlayAudio (indexNext);
+			}
+		}
+	}
+
 	public void StartOver() //if start over button is clicked, go back to page 1
 	{
 		PlayerPrefs.SetInt ("Page Number", 0);
-		if (PlayerPrefs.GetInt("Awesome Bought") == 1 && PlayerPrefs.GetInt("Page Animations") == 1)
+		if (PlayerPrefs.GetInt("Awesome Bought") == 1)
 		{
 			pageIMG.GetComponent<RawImage> ().texture = (Texture)blankImages [0];
 			videoCtrl.gameObject.SetActive (true);
