@@ -38,10 +38,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Users/Matt/Documents/UNITY/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Users/Matt/Documents/UNITY/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -61,11 +61,98 @@
      <Compile Include="Assets\EasyMovieTexture\Scripts\SeekBarCtrl.cs" />
      <Compile Include="Assets\EasyMovieTexture\Scripts\SphereMirror.cs" />
      <Compile Include="Assets\EasyMovieTexture\Scripts\VideoCopyTexture.cs" />
+     <Compile Include="Assets\PaintCraft\3DParty\NodeInspector\Assets\NodeInspector\Scripts\Attributes\GraphAttribute.cs" />
+     <Compile Include="Assets\PaintCraft\3DParty\NodeInspector\Assets\NodeInspector\Scripts\Attributes\JointAttribute.cs" />
+     <Compile Include="Assets\PaintCraft\3DParty\NodeInspector\Assets\NodeInspector\Scripts\Attributes\NodeMenuItemAttribute.cs" />
+     <Compile Include="Assets\PaintCraft\3DParty\NodeInspector\Assets\NodeInspector\Scripts\Attributes\OneWayAttribute.cs" />
+     <Compile Include="Assets\PaintCraft\3DParty\NodeInspector\Assets\NodeInspector\Scripts\JointType.cs" />
+     <Compile Include="Assets\PaintCraft\3DParty\NodeInspector\Assets\NodeInspector\Scripts\ScriptableObjectNode.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\AnalyticsWrapper.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\AppData.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\Configs\AdvancedPageConfig.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\Configs\BlankPageConfig.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\Configs\ColoringPageConfig.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\Configs\PageConfig.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\Configs\StreamingColoringPageConfig.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\GlitterCameraEffect.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\ICanvasCommand.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\SnapshotCommand.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\SnapshotData.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\SnapshotPool.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Canvas\UndoManager.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Controllers\BackLayerController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Controllers\CameraMovementController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Controllers\CameraSizeHandler.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Controllers\CanvasCameraController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Controllers\CanvasController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Controllers\OutlineLayerController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Controllers\ScreenCameraController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Controllers\SplitScreenCameraAspectController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\DisableSimulateMouseAsTouch.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\FullScreenWinFixer.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Brush.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\BrushContext.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\BrushFloatProperty.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\AlignAlongPath.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\BindScaleToVelocity.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\CameraControllFilter.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\DrawFirstPoint.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\FilterWithNextNode.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\FloodFillFilter.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\IgnorePositionsCloseThanSpacing.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\Interpolators\LinearInterpolator.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\Interpolators\SplineInterpolator.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\PropertyBinders\BindColorToDefaultCanvasColor.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\PropertyBinders\BindColorToLineConfig.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\PropertyBinders\BindColorToScale.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\PropertyBinders\BindHueOffsetToVelocity.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\PropertyBinders\BindScaleToLineConfig.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\PropertyBinders\BindScaleToVelocity.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\Randomizers\JitterPosition.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\Randomizers\JitterScale.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\Randomizers\MoveToRandomOffset.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\Randomizers\RandomClippingMaskOnBegining.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\Randomizers\RandomColor.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\Randomizers\RandomHue.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\Randomizers\RandomRotation.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\Randomizers\RandomScale.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\RemoveAppliedPointsExceptLast.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\RemoveDuplicateLastInputPositions.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\RenderSwatch.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\SetFixedAlpha.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\SetFixedScale.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\SetLastPointReadyToApply.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Filters\SetReadyAllPointsExceptLast.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\IFilter.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\LineConfig.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\Point.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\PointColor.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\PointStatus.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Tools\SpacingProperty.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\BrushDropDownController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\ChangeBrushOnClickController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\ChangeColorOnClickController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\DisableToggleGraphicThenOn.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\FullScreenButtonController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\RedoActiveButtonController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\Sliders\BrushAlphaSliderController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\Sliders\BrushHueSliderController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\Sliders\BrushSizeSliderController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\Sliders\BrushSpacingSliderController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\Sliders\SliderValueBinder.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\UIControllers\UndoActiveButtonController.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Utils\ColorUtil.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Utils\GOUtil.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Utils\MathUtil.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Utils\MeshUtil.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Utils\TexturePathAttribute.cs" />
+     <Compile Include="Assets\PaintCraft\Engine\Scripts\Utils\TextureUtil.cs" />
      <Compile Include="Assets\Scripts\Book Scripts\BookSounds.cs" />
      <Compile Include="Assets\Scripts\Book Scripts\ChangePages.cs" />
      <Compile Include="Assets\Scripts\Book Scripts\ChangePagesWithSound.cs" />
      <Compile Include="Assets\Scripts\Book Scripts\MusicPlay.cs" />
      <Compile Include="Assets\Scripts\Book Scripts\ScrollingText.cs" />
+     <Compile Include="Assets\Scripts\Coloring Book Scripts\picturePicker.cs" />
      <Compile Include="Assets\Scripts\Fading Scripts\FadeInScenes.cs" />
      <Compile Include="Assets\Scripts\Fading Scripts\FadeOutScenes.cs" />
      <Compile Include="Assets\Scripts\Fading Scripts\FadeToScene.cs" />
@@ -81,16 +168,31 @@
      <Compile Include="Assets\Scripts\Scene Management\SavedData.cs" />
      <Compile Include="Assets\Scripts\Scene Management\SliderManager.cs" />
      <Compile Include="Assets\Scripts\Scene Management\ToggleManager.cs" />
+     <None Include="Assets\PaintCraft\README.txt" />
+     <None Include="Assets\PaintCraft\Engine\Shaders\Effects\GlitterMixPostprocess.shader" />
+     <None Include="Assets\PaintCraft\BrushPack\Basic\Common\MaskedRegionShader.shader" />
      <None Include="Assets\EasyMovieTexture\Unlit_SphereInside.shader" />
+     <None Include="Assets\PaintCraft\BrushPack\Basic\Common\MaskedShader.shader" />
      <None Include="Assets\EasyMovieTexture\Chromakey.shader" />
+     <None Include="Assets\PaintCraft\Engine\Shaders\AlphaUnlitMaskColorWithGlitter.shader" />
      <None Include="Assets\EasyMovieTexture\readme.txt" />
+     <None Include="Assets\PaintCraft\BrushPack\Basic\Common\NormalRegionShader.shader" />
+     <None Include="Assets\PaintCraft\Engine\Shaders\AlphaUnlitMaskClippingMaskColor.shader" />
      <None Include="Assets\EasyMovieTexture\Chromakey2.shader" />
+     <None Include="Assets\PaintCraft\Engine\Shaders\AlphaUnlitColor.shader" />
+     <None Include="Assets\PaintCraft\Engine\Shaders\AlphaUnlitMaskColor.shader" />
+     <None Include="Assets\PaintCraft\3DParty\NodeInspector\LICENSE.txt" />
+     <None Include="Assets\PaintCraft\Engine\Shaders\UnlitVertexColor.shader" />
      <None Include="Assets\EasyMovieTexture\readme_License.txt" />
+     <None Include="Assets\PaintCraft\Engine\Shaders\Effects\AlphaToHolesShader.shader" />
+     <None Include="Assets\PaintCraft\Engine\Shaders\Effects\GlitterPostprocess.shader" />
+     <None Include="Assets\PaintCraft\Engine\Shaders\DepthMask.shader" />
+     <None Include="Assets\PaintCraft\BrushPack\Basic\Common\NormalShader.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Matt/Documents/UNITY/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Users/Matt/Documents/UNITY/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -425,7 +425,7 @@ public class MediaPlayerCtrl : MonoBehaviour
 #if UNITY_5_2
 				Call_SetUnityTexture((int)m_VideoTexture.GetNativeTexturePtr());
 #else
-				Call_SetUnityTexture (m_VideoTexture.GetNativeTextureID ());
+				Call_SetUnityTexture (m_VideoTexture.GetNativeTextureID());
 #endif
 #endif
 				Call_SetWindowSize ();
@@ -531,7 +531,7 @@ public class MediaPlayerCtrl : MonoBehaviour
 	#if UNITY_5_2
 	Call_SetUnityTexture((int)m_VideoTexture.GetNativeTexturePtr());
 	#else
-		Call_SetUnityTexture (m_VideoTexture.GetNativeTextureID ());
+		Call_SetUnityTexture (m_VideoTexture.GetNativeTextureID());
 	#endif
 	#endif
 
