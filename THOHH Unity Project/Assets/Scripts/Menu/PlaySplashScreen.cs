@@ -31,6 +31,10 @@ public class PlaySplashScreen : MonoBehaviour {
 				{
 					startFadeIn = false;
 				}
+				else if(Input.GetMouseButtonDown(0))
+				{
+					SceneManager.LoadScene (nextScene);
+				}
 			}
 			else
 			{

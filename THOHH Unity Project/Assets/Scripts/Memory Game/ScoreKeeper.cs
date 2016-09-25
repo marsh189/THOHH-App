@@ -17,6 +17,9 @@ public class ScoreKeeper : MonoBehaviour {
 	public Text hScore;
 	public GameObject hNotice;
 
+	public AudioClip matchClip;
+	public AudioClip badClip;
+
 	float t;
 	float waitTime;
 	float highScore;
@@ -54,6 +57,8 @@ public class ScoreKeeper : MonoBehaviour {
 			{
 				if (firstTurned.GetComponent<FlipCards> ().tileFront == secondTurned.GetComponent<FlipCards> ().tileFront)
 				{
+					GetComponent<AudioSource> ().clip = matchClip;
+
 					if (waitTime >= wait)
 					{
 						waitTime = 0;
@@ -70,6 +75,8 @@ public class ScoreKeeper : MonoBehaviour {
 				}
 				else
 				{
+					GetComponent<AudioSource> ().clip = badClip;
+
 					if (waitTime >= wait)
 					{
 						waitTime = 0;
@@ -85,6 +92,8 @@ public class ScoreKeeper : MonoBehaviour {
 						waitTime += Time.deltaTime;
 					}
 				}
+
+				GetComponent<AudioSource> ().Play ();
 			}
 
 			matchCount.text = "Match Count " + matches;

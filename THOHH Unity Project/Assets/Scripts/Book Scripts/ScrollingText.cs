@@ -14,6 +14,9 @@ public class ScrollingText : MonoBehaviour
 	public float wait = 3f;
 	public Transform endPos;
 
+	public Canvas mainCanvas;
+	public GameObject vM;
+
 	float time;
 	Color tempColor;
 
@@ -29,11 +32,14 @@ public class ScrollingText : MonoBehaviour
 	{
 		if (startScroll)
 		{
-			GetComponent<FadeOutScenes> ().startFade = true;
+			mainCanvas.gameObject.SetActive (false);
+			vM.gameObject.SetActive (false);
+
+			//GetComponent<FadeOutScenes> ().startFade = true;
 			creditCanvas.gameObject.SetActive (true);
 
-			if (GetComponent<FadeOutScenes>().endFade) 
-			{
+			//if (GetComponent<FadeOutScenes>().endFade) 
+			//{
 				PlayerPrefs.SetInt ("Page Number", 0);
 
 				if (text.transform.position.y >= endPos.position.y) 
@@ -67,7 +73,7 @@ public class ScrollingText : MonoBehaviour
 				{
 					text.transform.Translate (Vector3.up * Time.deltaTime * speed);
 				}
-			}
+			//}
 		}
 	}
 }

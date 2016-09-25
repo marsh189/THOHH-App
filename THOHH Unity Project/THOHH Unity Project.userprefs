@@ -1,12 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EasyMovieTexture\Scripts\MediaPlayerCtrl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu\PlaySplashScreen.cs">
     <Files>
       <File FileName="Assets\Scripts\Book Scripts\ScrollingText.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Book Scripts\BookSounds.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Book Scripts\ChangePagesWithSound.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Book Scripts\BookSounds.cs" Line="17" Column="16" />
+      <File FileName="Assets\Scripts\Book Scripts\ChangePagesWithSound.cs" Line="74" Column="5" />
       <File FileName="Assets\Scripts\Scene Management\SliderManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\EasyMovieTexture\Scripts\MediaPlayerCtrl.cs" Line="534" Column="58" />
+      <File FileName="Assets\EasyMovieTexture\Scripts\MediaPlayerCtrl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Memory Game\FlipCards.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Memory Game\ScoreKeeper.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menu\PlaySplashScreen.cs" Line="34" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

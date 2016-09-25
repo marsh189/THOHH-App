@@ -8,11 +8,13 @@ public class BookSounds : MonoBehaviour {
 	public List<AudioClip> superNarrator;
 	public AudioClip musicAudio;
 
+	public GameObject popUp;
+
 	public AudioSource narratorSource;
 	public AudioSource musicSource;
 
 	public int waitTime = 3;
-	float time;
+	float time = 0;
 
 	void Start()
 	{
@@ -35,13 +37,16 @@ public class BookSounds : MonoBehaviour {
 	{
 		if (PlayerPrefs.GetInt ("Auto Turn") == 1)
 		{
-			if (!narratorSource.isPlaying)
+			if (!popUp.activeInHierarchy)
 			{
-				time += Time.deltaTime;
-				if (time >= waitTime)
+				if (!narratorSource.isPlaying || narratorSource.clip == null)
 				{
-					GetComponent<ChangePagesWithSound> ().NextPage ();
-					time = 0;
+					time += Time.deltaTime;
+					if (time >= waitTime)
+					{
+						GetComponent<ChangePagesWithSound> ().NextPage ();
+						time = 0;
+					}
 				}
 			}
 		}
@@ -51,19 +56,36 @@ public class BookSounds : MonoBehaviour {
 	{
 		if (PlayerPrefs.GetInt ("Awesome Bought") == 1)
 		{
-			musicSource.volume = PlayerPrefs.GetFloat ("Narration Volume");
-			if (PlayerPrefs.GetString ("Narrator") == "Spooky")
-			{
-				narratorSource.clip = spookyNarrator [num];
+			narratorSource.volume = PlayerPrefs.GetFloat ("Narration Volume");
 
-				narratorSource.Play ();
-			}
-			else if (PlayerPrefs.GetString ("Narrator") == "Super Spooky")
+			if (!popUp.activeInHierarchy)
 			{
-				narratorSource.clip = superNarrator [num];
-				narratorSource.Play ();
-			}
-				
+				if (PlayerPrefs.GetString ("Narrator") == "Spooky")
+				{
+					if (num < spookyNarrator.Count)
+					{
+						narratorSource.clip = spookyNarrator [num];
+					}
+					else
+					{
+						narratorSource.clip = null;
+					}
+
+					narratorSource.Play ();
+				}
+				else if (PlayerPrefs.GetString ("Narrator") == "Super Spooky")
+				{
+					if (num < superNarrator.Count)
+					{
+						narratorSource.clip = superNarrator [num];
+					}
+					else
+					{
+						narratorSource.clip = null;
+					}
+					narratorSource.Play ();
+				}
+			}	
 		}
 		else
 		{

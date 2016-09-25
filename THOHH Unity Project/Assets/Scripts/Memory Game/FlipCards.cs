@@ -22,6 +22,7 @@ public class FlipCards : MonoBehaviour {
 			gameObject.GetComponent<Image> ().sprite = tileFront;
 			this.GetComponent<Button> ().interactable = false;
 		}
+		GetComponent<AudioSource> ().Play ();
 	}
 }
 
