@@ -21,6 +21,7 @@ namespace PatinCraft.UI{
         public void OnPointerClick(PointerEventData eventData)
         {
             LineConfig.Color.Color = Color;
+			LineConfig.Color.Alpha = 1f;
         }
         #endregion
 
