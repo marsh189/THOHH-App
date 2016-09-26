@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class ButtonScript : MonoBehaviour		//All code to navigate through game are here 
 {
+	void Start()
+	{
+		if (SceneManager.GetActiveScene().name == "Main Menu")
+		{
+			GameObject.Find ("Slider").GetComponent<Slider> ().value = (float)PlayerPrefs.GetInt ("Awesome Bought");
+		}
+	}
 
 	public void MainMenu() //sends player to menu scene
 	{
@@ -55,5 +62,19 @@ public class ButtonScript : MonoBehaviour		//All code to navigate through game a
 	public void SetInactive(GameObject hide) //Sets Active to false on objects
 	{
 		hide.gameObject.SetActive (false);
+	}
+
+	public void Awesome()
+	{
+		PlayerPrefs.SetInt ("Awesome Bought", (int)GameObject.Find("Slider").GetComponent<Slider>().value);
+
+		if (PlayerPrefs.GetInt ("Awesome Bought") == 1)
+		{
+			PlayerPrefs.SetInt ("Music", 0);
+			PlayerPrefs.SetFloat ("Music Volume", 0);
+			PlayerPrefs.SetInt ("Auto Turn", 0);
+			PlayerPrefs.SetFloat ("Narration Volume", 0);
+			PlayerPrefs.SetString ("Narrator", "Spooky");
+		}
 	}
 }

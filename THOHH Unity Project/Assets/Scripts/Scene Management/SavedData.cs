@@ -21,7 +21,6 @@ public class SavedData : MonoBehaviour 	//not sure if needed, update this script
 		pageNumber = PlayerPrefs.GetInt ("Page Number");
 		closedDisclaimer = PlayerPrefs.GetInt ("Closed Disclaimer");
 		awesomeBought = PlayerPrefs.GetInt ("Awesome Bought");
-		pageAnimations = PlayerPrefs.GetInt ("Page Animations");
 		musicOn = PlayerPrefs.GetInt ("Music");
 		narration = PlayerPrefs.GetString ("Narrator");
 		numOn = PlayerPrefs.GetInt ("123s");
