@@ -1,13 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Book Scripts/ChangePages.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PaintCraft/Engine/Scripts/Canvas/Configs/ColoringPageConfig.cs">
     <Files>
+      <File FileName="Assets/Scripts/Scene Management/CBLoader.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Book Scripts/ChangePagesWithSound.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Scene Management/ButtonScript.cs" Line="10" Column="56" />
-      <File FileName="Assets/Scripts/Scene Management/SavedData.cs" Line="14" Column="20" />
-      <File FileName="Assets/Scripts/Book Scripts/BookSounds.cs" Line="63" Column="9" />
+      <File FileName="Assets/Scripts/Scene Management/ButtonScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Scene Management/SavedData.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Book Scripts/BookSounds.cs" Line="1" Column="1" />
       <File FileName="Assets/PaintCraft/Engine/Scripts/Canvas/Configs/ColoringPageConfig.cs" Line="68" Column="1" />
       <File FileName="Assets/Scripts/Book Scripts/ChangePages.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Scene Management/ColoringPagePick.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
