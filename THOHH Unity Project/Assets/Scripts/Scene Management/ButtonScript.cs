@@ -21,7 +21,11 @@ public class ButtonScript : MonoBehaviour		//All code to navigate through game a
 	{
 		if (PlayerPrefs.GetInt ("Awesome Bought") == 1 || name == "Book" || name == "Main Menu")
 		{
-			SceneManager.LoadScene (name);
+			if (SceneManager.GetActiveScene ().name == "Main Menu")
+			{
+				GetComponent<AudioSource> ().Play ();
+			}
+			SceneManager.LoadScene(name);
 		}
 	}
 

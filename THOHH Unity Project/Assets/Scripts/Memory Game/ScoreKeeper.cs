@@ -55,6 +55,11 @@ public class ScoreKeeper : MonoBehaviour {
 
 			if (secondTurned != null)
 			{
+				GameObject[] tiles = GameObject.FindGameObjectsWithTag ("Tile");
+				for (int i = 0; i < tiles.Length; i++)
+				{
+					tiles [0].GetComponent<Button> ().interactable = false;
+				}
 				if (firstTurned.GetComponent<FlipCards> ().tileFront == secondTurned.GetComponent<FlipCards> ().tileFront)
 				{
 					GetComponent<AudioSource> ().clip = matchClip;
@@ -94,6 +99,10 @@ public class ScoreKeeper : MonoBehaviour {
 				}
 
 				GetComponent<AudioSource> ().Play ();
+				for (int i = 0; i < tiles.Length; i++)
+				{
+					tiles [0].GetComponent<Button> ().interactable = true;
+				}
 			}
 
 			matchCount.text = "Match Count " + matches;

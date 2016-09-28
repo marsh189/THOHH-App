@@ -29,6 +29,7 @@ public class PlaySplashScreen : MonoBehaviour {
 				time += Time.deltaTime;
 				if (time >= wait)
 				{
+					time = 0;
 					startFadeIn = false;
 				}
 				else if(Input.GetMouseButtonDown(0))
@@ -44,7 +45,19 @@ public class PlaySplashScreen : MonoBehaviour {
 		}
 		else
 		{
-			SceneManager.LoadScene (nextScene);
+			if (time >= 3f && nextScene == "Menu Movie")
+			{
+				SceneManager.LoadScene (nextScene);
+			}
+			else if (nextScene == "Main Menu")
+			{
+				SceneManager.LoadScene (nextScene);
+			}
+
+			else
+			{
+				time += Time.deltaTime;
+			}
 		}
 	}
 }

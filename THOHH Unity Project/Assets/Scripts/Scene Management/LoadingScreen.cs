@@ -25,6 +25,10 @@ public class LoadingScreen : MonoBehaviour {
 	{
 		if (PlayerPrefs.GetInt ("Awesome Bought") == 1 || levelToLoad == "Book" || levelToLoad == "Main Menu")
 		{
+			if (SceneManager.GetActiveScene ().name == "Main Menu" && (levelToLoad == "Book" || levelToLoad == "Narrated Book"))
+			{
+				GetComponent<AudioSource> ().Play ();
+			}
 			StartCoroutine (DisplayLoadingScreen (levelToLoad));
 		}
 	}
