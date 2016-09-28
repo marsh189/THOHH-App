@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class ButtonScript : MonoBehaviour		//All code to navigate through game are here 
 {
-	void Start()
+	void Update()
 	{
-		if (SceneManager.GetActiveScene().name == "Main Menu")
+		if (Input.GetKeyDown (KeyCode.Escape))
 		{
-			GameObject.Find ("Slider").GetComponent<Slider> ().value = (float)PlayerPrefs.GetInt ("Awesome Bought");
+			Application.Quit ();
 		}
 	}
-
 	public void MainMenu() //sends player to menu scene
 	{
 		SceneManager.LoadScene ("Main Menu");
@@ -20,7 +19,10 @@ public class ButtonScript : MonoBehaviour		//All code to navigate through game a
 
 	public void ChangeScene(string name)	//sends player to the book
 	{
-		SceneManager.LoadScene (name);
+		if (PlayerPrefs.GetInt ("Awesome Bought") == 1 || name == "Book" || name == "Main Menu")
+		{
+			SceneManager.LoadScene (name);
+		}
 	}
 
 	public void CloseDisclaimer() //closes the disclaimer pop-up
@@ -38,8 +40,16 @@ public class ButtonScript : MonoBehaviour		//All code to navigate through game a
 	{
 		Scene last = SceneManager.GetActiveScene();
 		string lastSceneName = last.name;
-		PlayerPrefs.SetString ("Last Scene", lastSceneName);
-		SceneManager.LoadScene (name);
+
+		if (PlayerPrefs.GetInt ("Awesome Bought") == 1)
+		{
+			PlayerPrefs.SetString ("Last Scene", lastSceneName);
+			SceneManager.LoadScene (name);
+		}
+		else
+		{
+			//Buy Awesome Version pop up
+		}
 	}
 
 	public void Back() //Back to the last scene
@@ -66,15 +76,10 @@ public class ButtonScript : MonoBehaviour		//All code to navigate through game a
 
 	public void Awesome()
 	{
-		PlayerPrefs.SetInt ("Awesome Bought", (int)GameObject.Find("Slider").GetComponent<Slider>().value);
+		PlayerPrefs.SetInt ("Awesome Bought", 1);
+		PlayerPrefs.SetFloat ("Narration Volume", 1f);
+		PlayerPrefs.SetString ("Narrator", "Spooky");
 
-		if (PlayerPrefs.GetInt ("Awesome Bought") == 1)
-		{
-			PlayerPrefs.SetInt ("Music", 0);
-			PlayerPrefs.SetFloat ("Music Volume", 0);
-			PlayerPrefs.SetInt ("Auto Turn", 0);
-			PlayerPrefs.SetFloat ("Narration Volume", 0);
-			PlayerPrefs.SetString ("Narrator", "Spooky");
-		}
 	}
+
 }

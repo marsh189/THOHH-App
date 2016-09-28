@@ -23,14 +23,10 @@ public class LoadingScreen : MonoBehaviour {
 
 	public void SceneChange(string levelToLoad)
 	{
-		//if (PlayerPrefs.GetInt ("123s") == 0 && PlayerPrefs.GetInt ("ABCs") == 0 && PlayerPrefs.GetInt ("Characters") == 0)
-		//{
-		//	errorText.SetActive (true);
-		//}
-		//else
-		//{
+		if (PlayerPrefs.GetInt ("Awesome Bought") == 1 || levelToLoad == "Book" || levelToLoad == "Main Menu")
+		{
 			StartCoroutine (DisplayLoadingScreen (levelToLoad));
-		//}
+		}
 	}
 
 	IEnumerator DisplayLoadingScreen(string level)
