@@ -192,6 +192,7 @@ public class ChangePagesWithSound : MonoBehaviour
 			GetComponent<BookSounds> ().PlayAudio (0);
 		}
 		popUp.SetActive (false); //close pop-up
+		GetComponent<BookSounds> ().PlayAudio (0);
 	}
 
 	public void Continue()
