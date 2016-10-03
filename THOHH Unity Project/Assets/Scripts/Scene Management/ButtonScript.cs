@@ -25,7 +25,12 @@ public class ButtonScript : MonoBehaviour		//All code to navigate through game a
 			{
 				GetComponent<AudioSource> ().Play ();
 			}
-			SceneManager.LoadScene(name);
+			SceneManager.LoadScene (name);
+		}
+		else
+		{
+			GetComponent<ShowDisclaimer> ().purcahsePop.SetActive (true);
+			GetComponent<ShowDisclaimer> ().purcahsePop.GetComponent<AudioSource> ().Play ();
 		}
 	}
 
@@ -37,7 +42,7 @@ public class ButtonScript : MonoBehaviour		//All code to navigate through game a
 
 	public void CloseWindow() //closes window when button is clicked
 	{
-		GameObject.Find ("Pop-Up").SetActive (false);
+		GameObject.FindWithTag ("Pop Up").SetActive (false);
 	}
 
 	public void SaveLastScene(string name) //saves the scene you left to go back to later
@@ -53,6 +58,8 @@ public class ButtonScript : MonoBehaviour		//All code to navigate through game a
 		else
 		{
 			//Buy Awesome Version pop up
+			GetComponent<ShowDisclaimer> ().purcahsePop.SetActive (true);
+			GetComponent<ShowDisclaimer> ().purcahsePop.GetComponent<AudioSource> ().Play ();
 		}
 	}
 

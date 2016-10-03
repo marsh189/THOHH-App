@@ -42,7 +42,7 @@ public class ScrollingText : MonoBehaviour
 			//{
 				PlayerPrefs.SetInt ("Page Number", 0);
 
-				if (text.transform.position.y >= endPos.position.y) 
+				if (url.transform.position.y >= endPos.position.y) 
 				{
 					if (speed > 0)
 					{

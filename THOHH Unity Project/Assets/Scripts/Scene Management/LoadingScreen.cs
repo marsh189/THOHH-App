@@ -31,6 +31,14 @@ public class LoadingScreen : MonoBehaviour {
 			}
 			StartCoroutine (DisplayLoadingScreen (levelToLoad));
 		}
+		else
+		{
+			if (SceneManager.GetActiveScene ().name == "Main Menu")
+			{
+				GetComponent<ShowDisclaimer> ().purcahsePop.SetActive (true);
+				GetComponent<ShowDisclaimer> ().purcahsePop.GetComponent<AudioSource> ().Play ();
+			}
+		}
 	}
 
 	IEnumerator DisplayLoadingScreen(string level)

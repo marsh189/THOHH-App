@@ -4,6 +4,7 @@ using System.Collections;
 public class ShowDisclaimer : MonoBehaviour 
 {
 	public GameObject dis;
+	public GameObject purcahsePop;
 
 	void Start () 
 	{

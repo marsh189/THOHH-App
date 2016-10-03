@@ -17,6 +17,10 @@ public class PlaySplashScreen : MonoBehaviour {
 	void Start () 
 	{
 		startFadeIn = true;
+		if(PlayerPrefs.GetInt("Rating Pop Up") < 2 || PlayerPrefs.GetInt("Rating Pop Up") == null)
+		{
+			PlayerPrefs.SetInt ("Rating Pop Up", 0);
+		}
 	}
 	
 	// Update is called once per frame

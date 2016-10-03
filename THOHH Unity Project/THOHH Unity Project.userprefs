@@ -1,12 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Book Scripts/MusicPlay.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Book Scripts\ScrollingText.cs">
     <Files>
-      <File FileName="Assets/Scripts/Memory Game/ScoreKeeper.cs" Line="20" Column="14" />
-      <File FileName="Assets/PinchToZoom.cs" Line="29" Column="4" />
-      <File FileName="Assets/Scripts/Scene Management/CBLoader.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Scene Management/ButtonScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Book Scripts/MusicPlay.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Memory Game\ScoreKeeper.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Scene Management\CBLoader.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Scene Management\ButtonScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Book Scripts\MusicPlay.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Coloring Book Scripts\PinchToZoom.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menu\ShowDisclaimer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Scene Management\LoadingScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\PaintCraft\Engine\Scripts\Controllers\ScreenCameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menu\PlaySplashScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menu\RatingPopUp.cs" Line="14" Column="48" />
+      <File FileName="Assets\Scripts\Scene Management\SavedData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Coloring Book Scripts\PinchZoom.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Book Scripts\ScrollingText.cs" Line="45" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -182,10 +182,13 @@ namespace PaintCraft.Controllers{
 
 		void AddNewPointToBrushContext (Vector2 position, BrushContext brushContext)
 		{
-			Vector3 screenPosition = position;
-			screenPosition.z = transform.position.z;
-			Vector3 worldPoint = Camera.ScreenToWorldPoint(screenPosition);
-			brushContext.AddPoint(worldPoint, screenPosition);
+			if (Input.touchCount < 2)
+			{
+				Vector3 screenPosition = position;
+				screenPosition.z = transform.position.z;
+				Vector3 worldPoint = Camera.ScreenToWorldPoint (screenPosition);
+				brushContext.AddPoint (worldPoint, screenPosition);
+			}
 		}
 
 		SnapshotCommand snapCommand;
