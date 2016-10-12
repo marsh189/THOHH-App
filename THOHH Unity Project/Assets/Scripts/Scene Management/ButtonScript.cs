@@ -90,6 +90,9 @@ public class ButtonScript : MonoBehaviour		//All code to navigate through game a
 		PlayerPrefs.SetInt ("Awesome Bought", 1);
 		PlayerPrefs.SetFloat ("Narration Volume", 1f);
 		PlayerPrefs.SetString ("Narrator", "Spooky");
+		PlayerPrefs.SetInt ("Music", 1);
+		PlayerPrefs.SetFloat ("Music Volume", 0.2f);
+		PlayerPrefs.SetInt ("Auto Turn", 1);
 
 	}
 

@@ -19,7 +19,12 @@ public class RatingPopUp : MonoBehaviour {
 	{
 		PlayerPrefs.SetInt ("Rating Pop Up", 2);
 		rating.SetActive (false);
-		Application.OpenURL ("market://detail?id=com.MrFoxBooks.TheHouseOnHauntedHollow");
+
+		#if UNITY_ANDROID
+		Application.OpenURL ("market://search?q=pub:Mr Fox Books");
+		#elif UNITY_IPHONE
+		Application.OpenURL("itms-apps://itunes.apple.com/app/com.MrFoxBooks.TheHouseOnHauntedHollow");
+		#endif
 	}
 
 	public void Cancel()

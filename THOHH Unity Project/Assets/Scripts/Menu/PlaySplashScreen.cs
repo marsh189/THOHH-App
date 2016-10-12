@@ -21,6 +21,13 @@ public class PlaySplashScreen : MonoBehaviour {
 		{
 			PlayerPrefs.SetInt ("Rating Pop Up", 0);
 		}
+
+		PlayerPrefs.SetInt ("Awesome Bought", 1);
+		PlayerPrefs.SetFloat ("Narration Volume", 1f);
+		PlayerPrefs.SetString ("Narrator", "Spooky");
+		PlayerPrefs.SetInt ("Music", 1);
+		PlayerPrefs.SetFloat ("Music Volume", 0.2f);
+		PlayerPrefs.SetInt ("Auto Turn", 1);
 	}
 	
 	// Update is called once per frame

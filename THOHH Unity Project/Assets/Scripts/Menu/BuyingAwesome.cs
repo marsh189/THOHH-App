@@ -2,18 +2,13 @@
 using System.Collections;
 using UnityEngine.Purchasing;
 
-public class BuyingAwesome : MonoBehaviour, IStoreListener{
-
+// Deriving the Purchaser class from IStoreListener enables it to receive messages from Unity Purchasing.
+public class BuyingAwesome : MonoBehaviour, IStoreListener
+{
 	private static IStoreController m_StoreController;          // The Unity Purchasing system.
 	private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
-
-	public static string kProductIDSubscription =  "subscription"; 
-
-	// Apple App Store-specific product identifier for the subscription product.
-	private static string kProductNameAppleSubscription =  "com.unity3d.subscription.new";
-
-	// Google Play Store-specific product identifier subscription product.
-	private static string kProductNameGooglePlaySubscription =  "com.unity3d.subscription.original"; 
+	  
+	public static string kProductIDNonConsumable = "awesomeversion";
 
 	void Start()
 	{
@@ -37,10 +32,8 @@ public class BuyingAwesome : MonoBehaviour, IStoreListener{
 		// Create a builder, first passing in a suite of Unity provided stores.
 		var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
-		builder.AddProduct(kProductIDSubscription, ProductType.Subscription, new IDs(){
-			{ kProductNameAppleSubscription, AppleAppStore.Name },
-			{ kProductNameGooglePlaySubscription, GooglePlay.Name },
-		});
+		// Continue adding the non-consumable product.
+		builder.AddProduct(kProductIDNonConsumable, ProductType.NonConsumable);
 
 		// Kick off the remainder of the set-up with an asynchrounous call, passing the configuration 
 		// and this class' instance. Expect a response either in OnInitialized or OnInitializeFailed.
@@ -53,13 +46,12 @@ public class BuyingAwesome : MonoBehaviour, IStoreListener{
 		// Only say we are initialized if both the Purchasing references are set.
 		return m_StoreController != null && m_StoreExtensionProvider != null;
 	}
-	public void BuySubscription()
+
+	public void BuyNonConsumable()
 	{
-		// Buy the subscription product using its the general identifier. Expect a response either 
+		// Buy the non-consumable product using its general identifier. Expect a response either 
 		// through ProcessPurchase or OnPurchaseFailed asynchronously.
-		// Notice how we use the general product identifier in spite of this ID being mapped to
-		// custom store-specific identifiers above.
-		BuyProductID(kProductIDSubscription);
+		BuyProductID(kProductIDNonConsumable);
 	}
 
 
@@ -160,14 +152,15 @@ public class BuyingAwesome : MonoBehaviour, IStoreListener{
 
 	public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs args) 
 	{
-		// Or ... a subscription product has been purchased by this user.
-		if (System.String.Equals(args.purchasedProduct.definition.id, kProductIDSubscription, System.StringComparison.Ordinal))
+		//a non-consumable product has been purchased by this user.
+		if (System.String.Equals(args.purchasedProduct.definition.id, kProductIDNonConsumable, System.StringComparison.Ordinal))
 		{
 			Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-			// TODO: The subscription item has been successfully purchased, grant this to the player.
+			// TODO: The non-consumable item has been successfully purchased, grant this item to the player.
 			GetComponent<ButtonScript>().Awesome();
-			GameObject.Find ("PurchasePopUp").SetActive (false);
+			GetComponent<ButtonScript> ().CloseWindow ();
 		}
+
 		// Or ... an unknown product has been purchased by this user. Fill in additional products here....
 		else 
 		{
