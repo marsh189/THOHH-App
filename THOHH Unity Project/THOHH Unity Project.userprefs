@@ -4,11 +4,11 @@
     <Files>
       <File FileName="Assets\Scripts\Memory Game\ScoreKeeper.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Scene Management\CBLoader.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Scene Management\ButtonScript.cs" Line="81" Column="3" />
+      <File FileName="Assets\Scripts\Scene Management\ButtonScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Menu\BuyingAwesome.cs" Line="1" Column="1" />
       <File FileName="Assets\Plugins\UnityPurchasing\script\IAPDemo.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Menu\RatingPopUp.cs" Line="26" Column="95" />
-      <File FileName="Assets\Scripts\Menu\PlaySplashScreen.cs" Line="30" Column="39" />
+      <File FileName="Assets\Scripts\Menu\PlaySplashScreen.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
