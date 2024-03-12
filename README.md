@@ -1,3 +1,5 @@
+# The House on Haunted Hollow
+
 The House on Haunted Hollow is a children's book I was assigned to create a mobile application for in Unity. This was my first Non-collegiate project done in Unity. The work was divided between me and one of my friends (with me taking the lead as I had more knowledge of Unity at the time).
 
 ![hohh](https://github.com/marsh189/THOHH-App/assets/11845697/fa8fda1f-3d8f-4411-ab14-991b5ca515f3)
